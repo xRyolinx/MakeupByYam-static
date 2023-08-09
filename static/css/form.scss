@@ -117,8 +117,15 @@ main {
 		// font-family: PlayfairDisplay-Medium;
         font-family: CormorantGaramond-Medium, serif;
         letter-spacing: 8px;
-        color: var(--grey_socials)
+        color: var(--grey_socials);
+
+
+        span {
+          font-family: PlayfairDisplay-Medium;
+        }
   	}
+
+
 
 	#titre {
 		padding: 60px 0;
@@ -145,6 +152,7 @@ main {
             // font-family: CormorantGaramond-Medium;
 		}
 	}
+
 
 	#form {
 		width: 100%;
@@ -544,4 +552,23 @@ main {
 			padding: 60px 20px;
 		}
 	}
+}
+
+
+@media (max-width: 350px) {
+  main {
+    .header {
+      font-size: 20px;
+    }
+
+    #titre {
+      h1 {
+        font-size: 20px;
+      }
+
+      .intro {
+        font-size: 12px;
+      }
+    }
+  }
 }

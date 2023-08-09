@@ -84,6 +84,9 @@ main .header {
   letter-spacing: 8px;
   color: var(--grey_socials);
 }
+main .header span {
+  font-family: PlayfairDisplay-Medium;
+}
 main #titre {
   padding: 60px 0;
   padding-top: 0px;
@@ -351,5 +354,16 @@ main select {
 @media (max-width: 500px) {
   main #form {
     padding: 60px 20px;
+  }
+}
+@media (max-width: 350px) {
+  main .header {
+    font-size: 20px;
+  }
+  main #titre h1 {
+    font-size: 20px;
+  }
+  main #titre .intro {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=form.css.map */
