@@ -1,6 +1,7 @@
 // global vars
 let slide = 1;
 let add = 1; //for interval
+let timing = 0; //for interval
 
 function carousel(bg_home)
 {
@@ -33,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('precedent').addEventListener('click', function() {
         if (slide != 1)
         {
+            // reset timing
+            timing = 0;
+
+            // slide
             slide--;
             carousel(bg_home);
         }
@@ -42,6 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('suivant').addEventListener('click', function() {
         if (slide != 3)
         {
+            // reset timing
+            timing = 0;
+
+            // slide
             slide++;
             carousel(bg_home);
         }
@@ -49,6 +58,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // autoscroll
     setInterval(function() {
+        // add to timing
+        timing++;
+
+        // return if not reach 3s
+        if (timing < 4)
+        {
+            return;
+        }
+
+        // else
         if (slide == 1)
         {
             add = 1;
@@ -59,5 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         slide += add;
         carousel(bg_home);
-    }, 3000);
+        timing = 0;
+
+    }, 1000);
 })
