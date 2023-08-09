@@ -1,0 +1,355 @@
+/* variables */
+:root {
+  --white: #FFFFFF;
+  --black: #4d504a;
+  --Rose_Gold: #B76E79;
+  --Ivory_White: #FDFDFD;
+  --Dusty_Rose: #D4A6B1;
+  --Charcoal_Gray: #333333;
+  --grey_border: #e1e1e1;
+  --grey_socials: #84847C;
+  --padding-glob: 40px;
+}
+
+/* Fonts */
+@font-face {
+  font-family: Montserrat-Light;
+  src: url(/static/fonts/Montserrat/static/Montserrat-Light.ttf);
+}
+@font-face {
+  font-family: PlayfairDisplay-Medium;
+  src: url(/static/fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf);
+}
+@font-face {
+  font-family: CormorantGaramond-Medium;
+  src: url(/static/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf);
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat-Light;
+}
+
+main {
+  padding: 50px 100px;
+  padding-bottom: 80px;
+  background-color: var(--Ivory_White);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+main #contact {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #informations {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 40px;
+  color: var(--Rose_Gold);
+}
+main #informations .info {
+  width: 230px;
+}
+main #informations .info p {
+  text-align: center;
+  font-weight: bold;
+}
+main #informations #info-mob {
+  width: auto;
+  margin: 0 auto;
+  display: none;
+}
+main #follow {
+  margin-top: 40px;
+  width: 100%;
+  color: var(--Rose_Gold);
+}
+main #follow p {
+  text-align: center;
+}
+main #follow span {
+  font-weight: bold;
+}
+main .header {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: CormorantGaramond-Medium, serif;
+  letter-spacing: 8px;
+  color: var(--grey_socials);
+}
+main #titre {
+  padding: 60px 0;
+  padding-top: 0px;
+  margin: 0 10px;
+  color: var(--Ivory_White);
+}
+main #titre h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 5px;
+  font-family: CormorantGaramond-Medium, serif;
+  font-weight: bold;
+}
+main #titre .intro {
+  text-align: center;
+  font-size: 16px;
+  font-style: italic;
+}
+main #form {
+  width: 100%;
+  background-color: var(--Dusty_Rose);
+  padding: 100px 40px;
+  border-radius: 60px 10px;
+  /*---------------------------------------------*/
+  /*---------------------------------------------*/
+  /*//////////////////////////////////////////////////////////////////
+  [ Contact 1 ]*/
+  /*------------------------------------------------------------------
+  [  ]*/
+  /*---------------------------------------------*/
+  /*---------------------------------------------*/
+  /*------------------------------------------------------------------
+  [ Responsive ]*/
+  /*------------------------------------------------------------------
+  [ Alert validate ]*/
+}
+main #form .contact1-form {
+  margin: 0 auto;
+}
+main #form input {
+  outline: none;
+  border: none;
+}
+main #form textarea {
+  outline: none;
+  border: none;
+}
+main #form textarea:focus, main #form input:focus {
+  border-color: transparent !important;
+}
+main #form input::-webkit-input-placeholder {
+  color: #999999;
+}
+main #form input:-moz-placeholder {
+  color: #999999;
+}
+main #form input::-moz-placeholder {
+  color: #999999;
+}
+main #form input:-ms-input-placeholder {
+  color: #999999;
+}
+main #form textarea::-webkit-input-placeholder {
+  color: #999999;
+}
+main #form textarea:-moz-placeholder {
+  color: #999999;
+}
+main #form textarea::-moz-placeholder {
+  color: #999999;
+}
+main #form textarea:-ms-input-placeholder {
+  color: #999999;
+}
+main #form button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+}
+main #form button:hover {
+  cursor: pointer;
+}
+main #form .contact1-form {
+  width: 100%;
+  max-width: 600px;
+}
+main #form input.input1 {
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px;
+}
+main #form input.input1 + .shadow-input1 {
+  border-radius: 25px;
+}
+main #form textarea.input1 {
+  min-height: 150px;
+  border-radius: 25px;
+  padding: 12px 30px;
+}
+main #form textarea.input1 + .shadow-input1 {
+  border-radius: 25px;
+}
+main #form .wrap-input1 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+main #form .input1 {
+  display: block;
+  width: 100%;
+  background: #e6e6e6;
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+}
+main #form .shadow-input1 {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px;
+  color: var(--Rose_Gold);
+  opacity: 0.5;
+}
+main #form .input1:focus + .shadow-input1 {
+  animation: anim-shadow 0.5s ease-in-out forwards;
+}
+@keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 80px 30px;
+    opacity: 0;
+  }
+}
+main #form .container-contact1-form-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main #form .contact1-form-btn {
+  min-width: 193px;
+  height: 50px;
+  border-radius: 25px;
+  background: var(--Rose_Gold);
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  margin-top: 20px;
+  transition: all 0.4s;
+}
+main #form .contact1-form-btn i {
+  margin-left: 7px;
+  transition: all 0.4s;
+}
+main #form .contact1-form-btn:hover {
+  background: #333333;
+}
+main #form .contact1-form-btn:hover i {
+  transform: translateX(10px);
+}
+main #form .validate-input {
+  position: relative;
+}
+main #form .alert-validate::before {
+  content: attr(data-validate);
+  position: absolute;
+  max-width: 70%;
+  background-color: white;
+  border: 1px solid #c80000;
+  border-radius: 13px;
+  padding: 4px 25px 4px 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+  pointer-events: none;
+  font-family: Montserrat-Medium;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+main #form .alert-validate::after {
+  content: "\f06a";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  color: #c80000;
+  font-size: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 13px;
+}
+main #form .alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+@media (max-width: 992px) {
+  main #form .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+main option {
+  background-color: #e6e6e6;
+  padding: 5px;
+  font-size: 15px;
+}
+main option:hover, main option:checked {
+  box-shadow: 0 0 10px 100px var(--Dusty_Rose) inset;
+  background-color: var(--Dusty_Rose) !important;
+}
+main .wrap-select {
+  border-radius: 25px;
+  padding: 0 30px;
+  background-color: #e6e6e6;
+}
+main select {
+  min-height: 50px;
+  width: 100%;
+  border-radius: 25px;
+  outline: 10px red;
+  border: 0;
+  background-color: #e6e6e6;
+  color: #666666;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 40px;
+  }
+}
+@media (max-width: 600px) {
+  main {
+    padding: 40px 20px;
+  }
+  main #informations .info, main #informations #or {
+    display: none;
+  }
+  main #informations #info-mob {
+    display: block;
+  }
+  main #form {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  main #titre h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 500px) {
+  main #form {
+    padding: 60px 20px;
+  }
+}/*# sourceMappingURL=form.css.map */

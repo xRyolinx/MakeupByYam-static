@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Makeup By Yam - Home</title>
+
+    <!-- page files -->
+    <link rel="stylesheet" href="/static/css/home.css">
+    <script src="/static/js/home.js"></script>
+
+    <!-- nav -->
+    <link rel="stylesheet" href="/static/nav/nav.css">
+    <script src="/static/nav/nav.js"></script>
+    <!-- footer -->
+    <link rel="stylesheet" href="/static/footer/footer.css">
+</head>
+<body>
+    <!-- bg -->
+    <div id="bg-home">
+        <img id="bg-home-1" src="/static/img/bg-home-1.jpg">
+        <img src="/static/img/bg-home-2.jpg">
+        <img src="/static/img/bg-home-3.jpg">
+    </div>
+
+    <!-- Nav -->
+    <nav>
+        <a id="nav_marque" href="/">
+            <p style="margin: 0; text-align: center;">Makeup</p>
+            <p style="margin: 0; text-align: center; font-size: 1rem;">By YAM</p>
+        </a>
+        
+        <button id="nav_button">
+            <img src="/static/nav/menu.png" alt="menu">
+        </button>
+
+        <div id="nav_add">
+            <a id="nav_home" class="nav_el" href="/">Home</a>
+            <a class="nav_el" href="">Services</a>
+            <a class="nav_el" href="/templates/contact.html">Contact</a>
+            <a class="nav_el" href="">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <main>
+        <header>
+            <!-- precedent -->
+            <img src="/static/img/go_back.png" id="precedent">
+            <!-- titre -->
+            <h1 id="title_total">Makeup by YAM</h1>
+            <div id="title_mob">
+                <h1 id="title_top">Makeup</h1>
+                <h1 id="title_bot">by YAM</h1>
+            </div>
+            <!-- suivant -->
+            <img src="/static/img/go_forth.png" id="suivant">
+        </header>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <!-- details -->
+        <div id="footer_details">
+            <!-- follow me -->
+            <div id="footer-follow">
+                <div class="footer-title">
+                    <p id="footer-follow_me">FOLLOW US</p>
+                </div>
+                <div id="footer-social">
+                    <div class="footer-separator"></div>
+                    <img src="/static/img/facebook.png" alt=""
+                    onclick='window.location.href = "https://www.facebook.com"'>
+                    <div class="footer-separator"></div>
+                    <img src="/static/img/instagram.png" alt=""
+                    onclick="window.location.href = 'https://www.instagram.com'">
+                    <div class="footer-separator"></div>
+                </div>
+                <p id="footer-miss_news">TO NOT MISS ANY NEWS!</p>
+            </div>
+            <div class="footer-divider"></div>
+            <!-- customer service -->
+            <div id="footer-customer">
+                <div class="footer-title">
+                    <p id="footer-custom_serv">CUSTOMER SERVICE</p>
+                </div>
+                <p><a href="">FAQ</a></p>
+                <p><a href="/templates/contact.html">CONTACT US</a></p>
+                <p><a href="/templates/rdv.html">PRENDRE RDV</a></p>
+            </div>
+            <div class="footer-divider"></div>
+            <!-- contact -->
+            <div id="footer-contact">
+                <div class="footer-title">
+                    <p id="footer-contact_now">CONTACTS</p>
+                </div>
+                <p>info@MakeupByYam.com</p>
+                <p>0779 39 95 26</p>
+            </div>
+        </div>
+        <!-- copy right -->
+        <div id="footer-copyright">
+            <p>&copy; 2023 Copyright - www.MakeupByYam.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
