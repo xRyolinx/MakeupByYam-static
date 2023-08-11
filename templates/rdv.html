@@ -20,9 +20,9 @@
 
     <!-- Nav -->
     <nav>
-        <a id="nav_marque" href="/">
-            <p style="margin: 0; text-align: center;">Makeup</p>
-            <p style="margin: 0; text-align: center; font-size: 1rem;">By YAM</p>
+        <a id="nav_marque" href="/home.html">
+            <p style="margin: 0;">Makeup</p>
+            <p style="margin: 0; font-size: 1rem;">By YAM</p>
         </a>
         
         <button id="nav_button">
@@ -30,10 +30,20 @@
         </button>
 
         <div id="nav_add">
-            <a id="nav_home" class="nav_el" href="/">Home</a>
-            <a class="nav_el" href="">Services</a>
+            <a id="nav_home" class="nav_el" href="/home.html">Accueil</a>
+            <a class="nav_el" href="/templates/services.html">Services</a>
             <a class="nav_el" href="/templates/contact.html">Contact</a>
-            <a class="nav_el" href="">FAQ</a>
+            <a class="nav_el" href="">A propos</a>
+        </div>
+
+        <div id="nav-social">
+            <div class="nav-separator" style="margin-left: 0px;"></div>
+            <img src="/static/img/facebook.png" alt=""
+            onclick='window.location.href = "https://www.facebook.com"'>
+            <div class="nav-separator"></div>
+            <img src="/static/img/instagram.png" alt=""
+            onclick="window.location.href = 'https://www.instagram.com'">
+            <div class="nav-separator" style="margin-right: 0px;"></div>
         </div>
     </nav>
 
@@ -43,7 +53,7 @@
             <!-- infos -->
             <div id="informations">
                 <div class="info" id="info-mob">
-                    <p class="header">CALL <span>-</span> EMAIL</p>
+                    <p class="header">CALL <span id="tiret">-</span> EMAIL</p>
                     <p>0779 39 95 26</p>
                     <p>info@MakeupByYam.com</p>
                 </div>
@@ -67,8 +77,8 @@
             <div id="form">
                 <form action="/contact" method="post" class="contact1-form validate-form">
                     <div id="titre">
-                        <p class="intro">Want to book ?</p>
-                        <h1>GET YOUR PLACE NOW</h1>
+                        <h1>RENDEZ<span id="tiret">-</span>VOUS</h1>
+                        <p class="intro">Réservez votre place des maintenant !</p>
                     </div>
 
                     <div class="wrap-input1 validate-input" data-validate = "Nom is required">
@@ -93,7 +103,7 @@
                     <div class="select wrap-input1 validate-input wrap-select" data-validate = "Service is required">
                         <!-- <input autocomplete="off" class="input1" type="text" name="subject" placeholder="Subject"> -->
                         <select class="validate-input" required name="service" id="">
-                            <option selected disabled value="select">Select</option>
+                            <option selected disabled value="select">Service</option>
                             <option value="makeup">Makeup - 5000 DA</option>
                             <option value="hair">Hair - 12000 DA</option>
                         </select>

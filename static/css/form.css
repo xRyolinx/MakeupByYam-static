@@ -7,7 +7,8 @@
   --Dusty_Rose: #D4A6B1;
   --Charcoal_Gray: #333333;
   --grey_border: #e1e1e1;
-  --grey_socials: #84847C;
+  --grey: #84847C;
+  --beige-bg: #f4f0ed;
   --padding-glob: 40px;
 }
 
@@ -34,14 +35,16 @@ body {
 }
 
 main {
-  padding: 50px 100px;
-  padding-bottom: 80px;
-  background-color: var(--Ivory_White);
-  max-width: 1100px;
-  margin: 0 auto;
+  background-color: var(--beige-bg);
+}
+main #tiret {
+  font-family: PlayfairDisplay-Medium;
 }
 main #contact {
-  height: 100%;
+  padding: 50px 50px;
+  padding-bottom: 80px;
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,24 +55,35 @@ main #informations {
   width: 100%;
   max-width: 700px;
   margin-bottom: 40px;
-  color: var(--Rose_Gold);
+}
+main #informations #or {
+  color: var(--grey);
 }
 main #informations .info {
   width: 230px;
+  color: var(--grey);
+  font-size: 14px;
 }
 main #informations .info p {
   text-align: center;
-  font-weight: bold;
 }
 main #informations #info-mob {
   width: auto;
   margin: 0 auto;
   display: none;
 }
+main .header {
+  font-size: 20px;
+  letter-spacing: 4px;
+  font-weight: normal;
+  font-family: CormorantGaramond-Medium, serif;
+  color: var(--black);
+}
 main #follow {
   margin-top: 40px;
   width: 100%;
-  color: var(--Rose_Gold);
+  color: var(--grey);
+  font-size: 15px;
 }
 main #follow p {
   text-align: center;
@@ -77,29 +91,22 @@ main #follow p {
 main #follow span {
   font-weight: bold;
 }
-main .header {
-  font-size: 30px;
-  font-weight: bold;
-  font-family: CormorantGaramond-Medium, serif;
-  letter-spacing: 8px;
-  color: var(--grey_socials);
-}
-main .header span {
-  font-family: PlayfairDisplay-Medium;
+main #follow .header {
+  font-size: 25px;
 }
 main #titre {
   padding: 60px 0;
   padding-top: 0px;
   margin: 0 10px;
-  color: var(--Ivory_White);
+  color: var(--black);
 }
 main #titre h1 {
   margin: 0;
   text-align: center;
   font-size: 40px;
-  letter-spacing: 5px;
+  letter-spacing: 12px;
   font-family: CormorantGaramond-Medium, serif;
-  font-weight: bold;
+  font-weight: normal;
 }
 main #titre .intro {
   text-align: center;
@@ -108,9 +115,8 @@ main #titre .intro {
 }
 main #form {
   width: 100%;
-  background-color: var(--Dusty_Rose);
+  background-color: var(--Ivory_White);
   padding: 100px 40px;
-  border-radius: 60px 10px;
   /*---------------------------------------------*/
   /*---------------------------------------------*/
   /*//////////////////////////////////////////////////////////////////
@@ -215,7 +221,7 @@ main #form .shadow-input1 {
   width: 100%;
   height: 100%;
   box-shadow: 0px 0px 0px 0px;
-  color: var(--Rose_Gold);
+  color: var(--grey);
   opacity: 0.5;
 }
 main #form .input1:focus + .shadow-input1 {
@@ -236,7 +242,7 @@ main #form .contact1-form-btn {
   min-width: 193px;
   height: 50px;
   border-radius: 25px;
-  background: var(--Rose_Gold);
+  background: var(--grey);
   font-family: Montserrat-Bold;
   font-size: 15px;
   line-height: 1.5;
@@ -253,7 +259,7 @@ main #form .contact1-form-btn i {
   transition: all 0.4s;
 }
 main #form .contact1-form-btn:hover {
-  background: #333333;
+  background: var(--black);
 }
 main #form .contact1-form-btn:hover i {
   transform: translateX(10px);
@@ -329,30 +335,30 @@ main select {
 }
 
 @media (max-width: 700px) {
-  main {
+  #contact {
     padding: 40px;
   }
 }
 @media (max-width: 600px) {
-  main {
+  #contact {
     padding: 40px 20px;
   }
-  main #informations .info, main #informations #or {
+  #contact #informations .info, #contact #informations #or {
     display: none;
   }
-  main #informations #info-mob {
+  #contact #informations #info-mob {
     display: block;
   }
-  main #form {
+  #contact #form {
     padding-top: 60px;
     padding-bottom: 60px;
   }
-  main #titre h1 {
+  #contact #titre h1 {
     font-size: 30px;
   }
 }
 @media (max-width: 500px) {
-  main #form {
+  #contact #form {
     padding: 60px 20px;
   }
 }

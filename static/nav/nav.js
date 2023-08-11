@@ -27,20 +27,19 @@ function show_hide_nav()
 
 //Changer couleur de bordure top/bot
 function nav_element_border_color(element, color) {
-    // element.style.borderTopColor = color;
+    // element.style.borderBottom = "solid " + color + " 2px";    
     element.style.borderBottomColor = color;    
-    element.style.color = Ivory_White;
 }
 
 // Couleur du link de la page actuelle, dans nav
 function nav_element_page(color) {
     let window_path_name = window.location.pathname;
     // Home page
-    if ((window_path_name == '/') || (window_path_name == '/index.html'))
+    if ((window_path_name == '/') || (window_path_name == '/home.html'))
     {
         nav_home = document.querySelector('#nav_home');
-        nav_element_border_color(nav_home, color);
-        nav_home.style.fontWeight = 'bold';
+        nav_element_border_color(nav_home, Ivory_White);
+        // nav_home.style.fontWeight = 'bold';
     }
     // Autre pages
     pages = document.querySelectorAll('.nav_el');
@@ -49,7 +48,7 @@ function nav_element_page(color) {
         && page.id != 'nav_home')
         {
             nav_element_border_color(page, color);
-            page.style.fontWeight = 'bold';
+            // page.style.fontWeight = 'bold';
         }    
     });
 }
@@ -65,7 +64,7 @@ function adapt_element_page_size()
     // PC
     else
     {
-        nav_element_page(Rose_Gold);
+        nav_element_page(Black);
     }
 }
 
@@ -85,7 +84,7 @@ let Rose_Gold = "#B76E79";
 let Ivory_White = "#FDFDFD";
 let Dusty_Rose = "#D4A6B1";
 let Charcoal_Gray = "#333333";
-let Black = "#111111;"
+let Black = "#4d504a"
 
 
 

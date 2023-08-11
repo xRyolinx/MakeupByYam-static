@@ -1,0 +1,262 @@
+/* variables */
+:root {
+    // colors
+    --white: #FFFFFF;
+    --black: #4d504a;
+
+    --Rose_Gold: #B76E79;
+    --Ivory_White: #FDFDFD;
+    --Dusty_Rose: #D4A6B1;
+    --Charcoal_Gray: #333333;
+
+    --grey_border: #e1e1e1;
+    --grey: #84847C;
+
+    --beige-bg: #f4f0ed;
+
+    // sizes
+    --padding-glob: 40px;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(/static/fonts/Montserrat/static/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: PlayfairDisplay-Medium;
+    src: url(/static/fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf);
+}
+
+@font-face {
+    font-family: CormorantGaramond-Medium;
+    src: url(/static/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf);
+}
+
+@font-face {
+    font-family: Multi;
+    src: url(/static/fonts/Multi/MultiText-Regular.otf);
+}
+
+
+/* style */
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    background-color: var(--Ivory_White);
+}
+
+
+#content {
+    header {
+        position: relative;
+        margin: 0 10px;
+        width: calc(100% - 20px);
+        height: 500px;
+        z-index: 0;
+
+        display: flex;
+        align-items: center;
+
+        #header-bg {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            z-index: -1;
+
+            img {
+                object-fit: cover;
+    
+                height: 100%;
+                width: 100%;
+    
+                opacity: 0.4;
+            }
+        }
+
+        #header-text {
+            padding: 20px 100px;
+            // background-color: blue;
+
+
+            color: var(--Ivory_White);
+            z-index: 1;
+
+            h1 {
+                font-size: 35px;
+                font-weight: normal;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            p {
+                font-style: italic;
+            }
+            
+        }
+
+        @media (max-width: 760px) {
+            #header-text {
+                padding-right: 20px;
+                padding-left: 20px;
+
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+.service {
+    // height: 800px;
+    width: 100%;
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    // background-color: red;
+
+    .header-title {
+        width: 50%;
+        text-align: left;
+        margin-bottom: 10px;
+
+        // background-color: green;
+
+        h1 {
+            color: var(--black);
+            font-family: CormorantGaramond-Medium, serif;
+            font-weight: 400;
+            font-size: 35px;
+            letter-spacing: 0.2em;
+    
+            margin: 0; 
+        }
+    }
+
+    .header-info {
+        flex-grow: 1;
+        // background-color: blue;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .service-img {
+        width: 50%;
+        height: 80%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            border-radius: 15px 5px;
+        }
+    }
+
+    .service-text {
+        width: 50%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+            font-size: 14px;
+            font-family: Multi, sans-serif;
+            font-weight: lighter;
+            color: var(--grey);
+        }
+        // background-color: red;
+    }
+}
+
+
+
+.beige {
+    background-color: var(--beige-bg);
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+.mr-auto {
+    margin-right: auto;
+}
+
+.pl-50 {
+    padding-left: 50px;
+}
+
+.pr-50 {
+    padding-right: 50px;
+}
+
+
+@media (max-width: 900px) {
+    .pl-50, .pr-50 {
+        padding: 0;
+    }
+    .ml-auto, .mr-auto {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .service {
+        .header-title {
+            width: 100%;
+
+            h1 {
+                text-align: center;
+            }
+        }
+        .header-info {
+            flex-direction: column;
+
+            .service-img {
+                width: 80%;
+            }
+            .service-text {
+                width: 100%;
+            }
+
+            .service-img img {
+                aspect-ratio: 1.5;
+            }
+        }
+        .header-info-reversed {
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .service {
+        padding: 50px 20px;
+    }
+}

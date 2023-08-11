@@ -7,7 +7,8 @@
   --Dusty_Rose: #D4A6B1;
   --Charcoal_Gray: #333333;
   --grey_border: #e1e1e1;
-  --grey_socials: #84847C;
+  --grey: #84847C;
+  --beige-bg: #f4f0ed;
   --padding-glob: 40px;
 }
 
@@ -15,7 +16,7 @@ footer {
   display: flex;
   flex-direction: column;
   border-top: 1px solid var(--grey_border);
-  color: var(--grey_socials);
+  color: var(--grey);
   font-family: CormorantGaramond-Medium;
 }
 
@@ -74,7 +75,7 @@ footer {
   text-align: center;
   text-decoration: none;
   margin: 10px 0;
-  color: var(--grey_socials);
+  color: var(--grey);
 }
 #footer_details #footer-contact {
   height: 100%;
@@ -106,8 +107,8 @@ footer {
   text-align: center;
   font-size: 13px;
   padding: 10px;
-  background-color: var(--Dusty_Rose);
-  color: var(--Ivory_White);
+  background-color: var(--beige-bg);
+  color: var(--black);
 }
 #footer-copyright p {
   margin: 0;

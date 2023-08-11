@@ -10,7 +10,9 @@
 	--Charcoal_Gray: #333333;
 
 	--grey_border: #e1e1e1;
-	--grey_socials: #84847C;
+	--grey: #84847C;
+
+    --beige-bg: #f4f0ed;
 
 	// sizes
 	--padding-glob: 40px;
@@ -26,7 +28,7 @@ footer {
     border-top: 1px solid var(--grey_border);
 
     // background-color: blue;
-    color: var(--grey_socials);
+    color: var(--grey);
     font-family: CormorantGaramond-Medium;
 }
 
@@ -102,7 +104,7 @@ footer {
 
             margin: 10px 0;
 
-            color: var(--grey_socials);
+            color: var(--grey);
         }
     }
     // contact
@@ -146,8 +148,8 @@ footer {
     padding: 10px;
 
 
-    background-color: var(--Dusty_Rose);
-    color: var(--Ivory_White);
+    background-color: var(--beige-bg);
+    color: var(--black);
 
 
     p {

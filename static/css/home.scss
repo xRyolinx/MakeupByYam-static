@@ -10,7 +10,9 @@
     --Charcoal_Gray: #333333;
 
     --grey_border: #e1e1e1;
-    --grey_socials: #84847C;
+    --grey: #84847C;
+
+    --beige-bg: #f4f0ed;
 
     // sizes
     --padding-glob: 40px;
@@ -56,10 +58,15 @@ body {
     overflow-x: hidden;
 }
 
+
 @media (min-width: 992px)
 {
     nav {
         background: transparent !important;
+    }
+
+    .nav_el,.nav_el:hover , #nav_marque {
+        color: var(--Ivory_White) !important;
     }
 }
 
@@ -67,6 +74,7 @@ body {
 #bg-home {
     position: absolute;
     height: 100svh;
+    min-height: 450px;
     
     width: 300%;
 
@@ -89,7 +97,8 @@ body {
 
 
 main {
-    height: calc(100svh - 70px);
+    height: calc(100svh - 130px);
+    min-height: 450px;
     width: 100%;
     padding: 0 var(--padding-glob);
 
@@ -131,6 +140,10 @@ main {
 @media (max-width: 992px) {
     #bg-home {
         top: 70px;
+        height: calc(100svh - 70px);
+    }
+    
+    main {
         height: calc(100svh - 70px);
     }
 }

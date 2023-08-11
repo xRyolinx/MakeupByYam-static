@@ -10,7 +10,9 @@
 	--Charcoal_Gray: #333333;
 
 	--grey_border: #e1e1e1;
-	--grey_socials: #84847C;
+	--grey: #84847C;
+
+  --beige-bg: #f4f0ed;
 
 	// sizes
 	--padding-glob: 40px;
@@ -52,15 +54,24 @@ body {
 // }
 
 main {
-	padding: 50px 100px;
-	padding-bottom: 80px;
+	#tiret {
+		font-family: PlayfairDisplay-Medium;
+	  }
+
+
+	  
 	// height: 1000px;
-	background-color: var(--Ivory_White);
-    max-width: 1100px;
-    margin: 0 auto;
+	  background-color: var(--beige-bg);
+    
+    
 
 	#contact {
-		height: 100%;
+    padding: 50px 50px;
+	  padding-bottom: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    
+		// height: 100%;
 
 		// background-color: blue;
 		display: flex;
@@ -76,15 +87,19 @@ main {
 		// background-color: red;
 
 		margin-bottom: 40px;
-        color: var(--Rose_Gold);
+
+		#or {
+			color: var(--grey);
+		}
         
 		.info {
 			width: 230px;
+            color: var(--grey);
+            font-size: 14px;
 			// background-color: blue;
 
 			p {
 				text-align: center;
-                font-weight: bold;
 			}
 		}
 
@@ -95,43 +110,45 @@ main {
 		}
 	}
 
+    .header {
+    	  font-size: 20px;
+        letter-spacing: 4px;
+		
+        font-weight: normal;
+		
+        font-family: CormorantGaramond-Medium, serif;
+        color: var(--black);
+  	}
+
   	#follow {
 		margin-top: 40px;
 		width: 100%;
-		color: var(--Rose_Gold);
+		color: var(--grey);
+        font-size: 15px;
 		// background-color: red;
 		
 		p {
-		text-align: center;
+		    text-align: center;
 		}
 
 		span {
-		font-weight: bold;
+		    font-weight: bold;
 		}
+
+        .header {
+            font-size: 25px;
+        }
 	}
 
-  	.header {
-    	font-size: 30px;
-		font-weight: bold;
-		// font-style: italic;
-		// font-family: PlayfairDisplay-Medium;
-        font-family: CormorantGaramond-Medium, serif;
-        letter-spacing: 8px;
-        color: var(--grey_socials);
-
-
-        span {
-          font-family: PlayfairDisplay-Medium;
-        }
-  	}
+  	
 
 
 
 	#titre {
 		padding: 60px 0;
-        padding-top: 0px;
-	    margin: 0 10px;
-		color: var(--Ivory_White);
+    	padding-top: 0px;
+	  	margin: 0 10px;
+		color: var(--black);
 		// background-color: green;
 
 		h1 {
@@ -140,9 +157,9 @@ main {
 
 			// font-family: PlayfairDisplay-Medium;
 			font-size: 40px;
-            letter-spacing: 5px;
+            letter-spacing: 12px;
             font-family: CormorantGaramond-Medium, serif;
-			font-weight: bold;
+			font-weight: normal;
 
 		}
 		.intro {
@@ -156,11 +173,11 @@ main {
 
 	#form {
 		width: 100%;
-		background-color: var(--Dusty_Rose);
+		background-color: var(--Ivory_White);
 
 		padding: 100px 40px;
 
-		border-radius: 60px 10px;
+		// border-radius: 60px 10px;
 
 		.contact1-form {
 			margin: 0 auto;
@@ -268,7 +285,7 @@ main {
     height: 100%;
     box-shadow: 0px 0px 0px 0px;
   
-    color: var(--Rose_Gold);
+    color: var(--grey);
     opacity: 0.5;
   }
   
@@ -306,7 +323,7 @@ main {
     min-width: 193px;
     height: 50px;
     border-radius: 25px;
-    background: var(--Rose_Gold);
+    background: var(--grey);
     font-family: Montserrat-Bold;
     font-size: 15px;
     line-height: 1.5;
@@ -338,7 +355,7 @@ main {
   }
   
   .contact1-form-btn:hover {
-    background: #333333;
+    background: var(--black);
   }
   
   .contact1-form-btn:hover i {
@@ -512,14 +529,14 @@ main {
 
 
 @media (max-width: 700px) {
-	main {
+	#contact {
 		padding: 40px;
 	}
 }
 
 
 @media (max-width: 600px) {
-	main {
+	#contact {
 		padding: 40px 20px;
 		#informations {
 			.info, #or {
@@ -547,7 +564,7 @@ main {
 }
 
 @media (max-width: 500px) {
-	main {
+	#contact {
 		#form {
 			padding: 60px 20px;
 		}
