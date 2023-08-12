@@ -149,9 +149,10 @@ header {
             font-size: 35px;
             letter-spacing: 0.2em;
 
-            word-break: break-all;
+            word-break: break-word;
     
-            margin: 0; 
+            margin: 0;
+            margin-bottom: 10px;
         }
     }
 
@@ -188,10 +189,11 @@ header {
         justify-content: center;
 
         p {
-            font-size: 14px;
-            font-family: Multi, sans-serif;
-            font-weight: lighter;
+            font-size: 15px;
+            font-family: Montserrat-Light;
+            // font-weight: lighter;
             color: var(--grey);
+            line-height: 25px;
         }
         // background-color: red;
     }
@@ -201,6 +203,10 @@ header {
 
 .beige {
     background-color: var(--beige-bg);
+
+    p {
+        color: var(--black) !important;
+    }
 }
 
 .ml-auto {

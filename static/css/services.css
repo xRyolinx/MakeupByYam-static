@@ -109,8 +109,9 @@ header #header-text p {
   font-weight: 400;
   font-size: 35px;
   letter-spacing: 0.2em;
-  word-break: break-all;
+  word-break: break-word;
   margin: 0;
+  margin-bottom: 10px;
 }
 .service .header-info {
   flex-grow: 1;
@@ -136,14 +137,17 @@ header #header-text p {
   justify-content: center;
 }
 .service .service-text p {
-  font-size: 14px;
-  font-family: Multi, sans-serif;
-  font-weight: lighter;
+  font-size: 15px;
+  font-family: Montserrat-Light;
   color: var(--grey);
+  line-height: 25px;
 }
 
 .beige {
   background-color: var(--beige-bg);
+}
+.beige p {
+  color: var(--black) !important;
 }
 
 .ml-auto {

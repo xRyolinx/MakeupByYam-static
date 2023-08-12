@@ -169,7 +169,7 @@ nav {
     border-bottom: 1px solid var(--grey_border);
 }
 
-#nav-social img {
+#nav-social svg {
     cursor: pointer;
     height: 18px;
 }

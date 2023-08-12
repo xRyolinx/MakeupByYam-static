@@ -54,7 +54,7 @@ footer {
   border-top: 1px solid var(--grey_border);
   border-bottom: 1px solid var(--grey_border);
 }
-#footer_details #footer-follow #footer-social img {
+#footer_details #footer-follow #footer-social svg {
   cursor: pointer;
   height: 20px;
 }
