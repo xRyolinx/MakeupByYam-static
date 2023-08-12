@@ -43,7 +43,7 @@ main {
   background-color: var(--Ivory_White);
 }
 
-#content header {
+header {
   position: relative;
   margin: 0 10px;
   width: calc(100% - 20px);
@@ -52,37 +52,37 @@ main {
   display: flex;
   align-items: center;
 }
-#content header #header-bg {
+header #header-bg {
   position: absolute;
   height: 100%;
   width: 100%;
   background-color: black;
   z-index: -1;
 }
-#content header #header-bg img {
+header #header-bg img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
   width: 100%;
   opacity: 0.4;
 }
-#content header #header-text {
+header #header-text {
   padding: 20px 100px;
   color: var(--Ivory_White);
   z-index: 1;
 }
-#content header #header-text h1 {
+header #header-text h1 {
   font-size: 35px;
   font-weight: normal;
 }
-#content header #header-text h1 span {
+header #header-text h1 span {
   font-weight: bold;
 }
-#content header #header-text p {
+header #header-text p {
   font-style: italic;
 }
 @media (max-width: 760px) {
-  #content header #header-text {
+  header #header-text {
     padding-right: 20px;
     padding-left: 20px;
     margin: 0 auto;
@@ -109,6 +109,7 @@ main {
   font-weight: 400;
   font-size: 35px;
   letter-spacing: 0.2em;
+  word-break: break-all;
   margin: 0;
 }
 .service .header-info {
@@ -119,11 +120,10 @@ main {
 }
 .service .service-img {
   width: 50%;
-  height: 80%;
 }
 .service .service-img img {
-  height: 100%;
   width: 100%;
+  aspect-ratio: 3/2;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px 5px;
@@ -162,7 +162,24 @@ main {
   padding-right: 50px;
 }
 
+.mb {
+  display: none;
+}
+
 @media (max-width: 900px) {
+  #content {
+    padding-top: 10px;
+    border-top: solid 1px var(--grey_border);
+  }
+  header {
+    margin-bottom: 50px;
+  }
+  .mb {
+    display: inline-block;
+  }
+  .lg {
+    display: none;
+  }
   .pl-50, .pr-50 {
     padding: 0;
   }
@@ -172,6 +189,8 @@ main {
   }
   .service .header-title {
     width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px;
   }
   .service .header-title h1 {
     text-align: center;
@@ -180,7 +199,7 @@ main {
     flex-direction: column;
   }
   .service .header-info .service-img {
-    width: 80%;
+    width: 100%;
   }
   .service .header-info .service-text {
     width: 100%;
@@ -194,6 +213,11 @@ main {
 }
 @media (max-width: 600px) {
   .service {
-    padding: 50px 20px;
+    padding: 50px 10px;
+  }
+}
+@media (max-width: 320px) {
+  .service .header-title h1 {
+    font-size: 30px;
   }
 }/*# sourceMappingURL=services.css.map */
