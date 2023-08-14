@@ -97,16 +97,20 @@ body {
 
 
 main {
-    height: calc(100svh - 130px);
-    min-height: 450px;
+    // height: 1000px;
+    // background-color: blue;
     width: 100%;
     padding: 0 var(--padding-glob);
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    // display: flex;
+    // justify-content: space-around;
+    // align-items: center;
 
     header {
+        height: calc(100svh - 130px);
+        min-height: 450px;
+        // background-color: red;
+    
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -135,6 +139,8 @@ main {
         }
     }
 }
+
+
 
 // for nav bar
 @media (max-width: 992px) {

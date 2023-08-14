@@ -72,15 +72,12 @@ body {
 }
 
 main {
-  height: calc(100svh - 130px);
-  min-height: 450px;
   width: 100%;
   padding: 0 var(--padding-glob);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 main header {
+  height: calc(100svh - 130px);
+  min-height: 450px;
   display: flex;
   justify-content: space-between;
   align-items: center;
