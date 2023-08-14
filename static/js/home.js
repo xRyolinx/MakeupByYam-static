@@ -22,7 +22,36 @@ function carousel(bg_home)
 
 // start
 document.addEventListener('DOMContentLoaded', function() {
-    // var
+    // drop-down menu
+    // link content to its arrow
+    let arrows = document.querySelectorAll('.drop-down-svg-container');
+    arrows.forEach((arrow) => {
+        let content = arrow.parentElement.parentElement.children[1];
+        content.height = content.clientHeight;
+        content.setAttribute('style', 'height: 0;');
+        arrow.content = content;
+    });
+
+    // arrows
+    arrows.forEach((arrow) => {
+        arrow.addEventListener('click', function() {
+            let content = arrow.content;
+            if (window.getComputedStyle(arrow).transform == 'matrix(-1, 0, 0, -1, 0, 0)')
+            {
+                content.setAttribute('style', 'height: ' + content.height.toString() + 'px;');
+                arrow.setAttribute('style', 'transform: rotate(0deg);')
+            }
+            else
+            {
+                content.setAttribute('style', 'height: 0;');
+                arrow.setAttribute('style', 'transform: rotate(180deg);')
+            }
+        });
+    });
+
+
+    
+    // carousel
     let bg_home = document.getElementById('bg-home');
 
     // window
