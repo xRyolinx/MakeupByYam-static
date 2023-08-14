@@ -153,7 +153,9 @@ header #header-text p {
 }
 
 .drop-down-title-container {
-  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
