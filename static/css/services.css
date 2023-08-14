@@ -257,6 +257,7 @@ header #header-text p {
   }
   .mb {
     display: inline-block;
+    padding-left: 0 !important;
   }
   .lg {
     display: none;
