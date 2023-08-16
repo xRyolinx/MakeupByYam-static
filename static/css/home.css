@@ -38,8 +38,8 @@ body {
   width: 100%;
   position: relative;
   margin: 0;
-  background-color: var(--Ivory_White);
   font-family: Montserrat-Light;
+  background-color: var(--Ivory_White);
   color: var(--Charcoal_Gray);
   overflow-x: hidden;
 }
@@ -52,6 +52,10 @@ body {
     color: var(--Ivory_White) !important;
   }
 }
+main {
+  width: 100%;
+}
+
 #bg-home {
   position: absolute;
   height: 100svh;
@@ -71,34 +75,35 @@ body {
   opacity: 0.4;
 }
 
-main {
-  width: 100%;
-  padding: 0 var(--padding-glob);
-}
-main header {
+header {
   height: calc(100svh - 130px);
+  padding: 0 40px;
+  padding-bottom: 130px;
   min-height: 450px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-main header h1 {
-  text-align: center;
-  margin: 0 30px;
-  font-family: PlayfairDisplay-Medium;
-  font-size: 70px;
-  color: var(--Ivory_White);
-}
-main header #title_mob {
+header #div-center-mob {
   display: none;
 }
-main header #title_mob h1 {
-  font-size: 50px;
+header .title {
+  display: none;
+  opacity: 0;
+  font-family: PlayfairDisplay-Medium;
+  font-size: 60px;
+  letter-spacing: 15px;
+  text-align: center;
+  margin: 0 30px;
+  color: var(--Ivory_White);
 }
-main header img {
+header #precedent, header #suivant {
   height: 30px;
   cursor: pointer;
+}
+header #scroll-buttons {
+  display: none;
 }
 
 @media (max-width: 992px) {
@@ -106,29 +111,195 @@ main header img {
     top: 70px;
     height: calc(100svh - 70px);
   }
-  main {
+  header {
     height: calc(100svh - 70px);
   }
 }
 @media (max-width: 750px) {
-  main {
-    padding: 0 15px;
+  header {
+    flex-direction: column;
+    padding: 20px 10px;
   }
-  main header {
-    height: 100%;
-    padding: 20px 0;
-  }
-  main header #title_total {
+  header #precedent, header #suivant {
     display: none;
   }
-  main header #title_mob {
-    align-self: flex-start;
+  header #div-center-mob {
     display: block;
+    height: 15px;
+    margin: 10px 0;
   }
-  main header #title_mob #title_top {
-    margin-bottom: 20px;
+  header .title {
+    width: 100%;
+    font-size: 45px;
+    margin: 0;
   }
-  main header #title_mob #title_bot {
-    font-size: 30px;
+  header #scroll-buttons {
+    display: flex;
+    margin: 20px auto;
+  }
+  header #scroll-buttons .scroll-button {
+    height: 15px;
+    aspect-ratio: 1/1;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: solid 2px var(--Ivory_White);
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+}
+@media (max-width: 500px) {
+  header .title {
+    font-size: 25px;
+  }
+}
+#services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.services-part {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-title {
+  height: 300px;
+  width: 400px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.service-title h1 {
+  text-align: center;
+  width: 90%;
+}
+
+.service {
+  position: relative;
+  height: 700px;
+  width: 400px;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+}
+.service .service-title-container {
+  position: absolute;
+  left: 0;
+  width: 70%;
+  height: 35%;
+  z-index: 4;
+}
+.service .service-title-container .service-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  z-index: 5;
+}
+.service .service-title-container .service-title .service-title-image {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  background-color: black;
+  box-shadow: -3px -3px 10px var(--black);
+  z-index: 6;
+}
+.service .service-title-container .service-title .service-title-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.8;
+}
+.service .service-title-container .service-title p {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--Ivory_White);
+  position: relative;
+  z-index: 7;
+}
+.service .service-info {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  margin-left: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: black;
+  box-shadow: 8px 4px 10px var(--black);
+  z-index: 1;
+}
+.service .service-info img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.3;
+  z-index: 2;
+}
+.service .service-info .service-info-text {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
+  padding-top: 90px;
+  color: var(--Ivory_White);
+}
+.service .service-info .service-info-text h3 {
+  font-size: 25px;
+  text-align: center;
+}
+.service .service-info .service-info-text p {
+  font-size: 15px;
+}
+.service .service-info .service-info-button {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  z-index: 3;
+  cursor: pointer;
+  background-color: var(--beige-bg);
+}
+.service .service-info .service-info-button p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: font-size 0.5s ease;
+  color: var(--black);
+  margin: 0;
+}
+.service .service-info .service-info-button:hover p {
+  font-size: 20px;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }/*# sourceMappingURL=home.css.map */

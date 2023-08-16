@@ -3,7 +3,7 @@ let slide = 1;
 let add = 1; //for interval
 let timing = 0; //for interval
 
-function carousel(bg_home)
+function carousel_bg(bg_home)
 {
     let width = document.querySelector('#bg-home').clientWidth / 3;
     if (slide == 1)
@@ -20,43 +20,43 @@ function carousel(bg_home)
     }
 }
 
+function carousel_title(titles)
+{
+    // reset titles
+    titles.forEach(title => {
+        title.removeAttribute('style');
+    });
+
+    // show title
+    let title = titles[slide - 1];
+    title.setAttribute('style', "display: block; animation: visible 2s; opacity: 1");
+}
+
+
+function carousel_buttons(buttons)
+{
+    // reset
+    buttons.forEach(button => {
+        button.removeAttribute('style');
+    });
+
+    // show button
+    let button = buttons[slide - 1];
+    button.setAttribute('style', 'background-color: var(--Ivory_White);');
+}
+
 // start
 document.addEventListener('DOMContentLoaded', function() {
-    // drop-down menu
-    // link content to its arrow
-    let arrows = document.querySelectorAll('.drop-down-svg-container');
-    arrows.forEach((arrow) => {
-        let content = arrow.parentElement.parentElement.children[1];
-        content.height = content.clientHeight;
-        content.setAttribute('style', 'height: 0;');
-        arrow.content = content;
-    });
-
-    // arrows
-    arrows.forEach((arrow) => {
-        arrow.addEventListener('click', function() {
-            let content = arrow.content;
-            if (window.getComputedStyle(arrow).transform == 'matrix(-1, 0, 0, -1, 0, 0)')
-            {
-                content.setAttribute('style', 'height: ' + content.height.toString() + 'px;');
-                arrow.setAttribute('style', 'transform: rotate(0deg);')
-            }
-            else
-            {
-                content.setAttribute('style', 'height: 0;');
-                arrow.setAttribute('style', 'transform: rotate(180deg);')
-            }
-        });
-    });
-
-
-    
     // carousel
     let bg_home = document.getElementById('bg-home');
-
+    let titles = document.querySelectorAll('.title');
+    let buttons = document.querySelectorAll('.scroll-button');
+    
     // window
     window.addEventListener('resize', () => {
-        carousel(bg_home);
+        carousel_bg(bg_home);
+        carousel_title(titles);
+        carousel_buttons(buttons);
     });
 
     // go back
@@ -68,7 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // slide
             slide--;
-            carousel(bg_home);
+            carousel_bg(bg_home);
+            carousel_title(titles);
+            carousel_buttons(buttons);
         }
     })
     
@@ -81,9 +83,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // slide
             slide++;
-            carousel(bg_home);
+            carousel_bg(bg_home);
+            carousel_title(titles);
+            carousel_buttons(buttons);
         }
     })
+
+    // buttons
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            slide = parseInt(button.id);
+
+            add = 1;
+
+            carousel_bg(bg_home);
+            carousel_title(titles);
+            carousel_buttons(buttons);
+
+            timing = 0;
+        });
+    });
 
     // autoscroll
     setInterval(function() {
@@ -106,7 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
             add = -1;
         }
         slide += add;
-        carousel(bg_home);
+
+        carousel_bg(bg_home);
+        carousel_title(titles);
+        carousel_buttons(buttons);
+
         timing = 0;
 
     }, 1000);
