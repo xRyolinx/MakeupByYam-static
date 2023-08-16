@@ -152,37 +152,57 @@ header #scroll-buttons {
     font-size: 25px;
   }
 }
+#services-container {
+  position: relative;
+  width: 100%;
+}
+
 #services {
+  max-width: 1300px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 120px 20px;
 }
 
 .services-part {
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.service-title {
-  height: 300px;
-  width: 400px;
+#services-bg {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  height: 55%;
+  width: 100%;
+  background-color: var(--beige-bg);
+}
+
+.services-title {
+  height: 250px;
+  width: 90%;
   display: flex;
   justify-content: right;
   align-items: center;
 }
-.service-title h1 {
+.services-title h1 {
+  font-family: CormorantGaramond-Medium;
+  font-size: 45px;
   text-align: center;
-  width: 90%;
+  color: var(--black);
+  width: 100%;
+  margin: 0;
 }
 
 .service {
   position: relative;
-  height: 700px;
-  width: 400px;
+  width: 100%;
+  max-width: 500px;
   margin: 50px 0;
   display: flex;
   flex-direction: column;
@@ -190,56 +210,56 @@ header #scroll-buttons {
   align-items: center;
   z-index: 0;
 }
-.service .service-title-container {
+
+.service-title-container {
   position: absolute;
   left: 0;
   width: 70%;
-  height: 35%;
+  aspect-ratio: 3/2;
   z-index: 4;
 }
-.service .service-title-container .service-title {
+.service-title-container .service-title {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 100%;
-  padding: 5px;
   z-index: 5;
 }
-.service .service-title-container .service-title .service-title-image {
+.service-title-container .service-title .service-title-image {
   position: absolute;
   border-radius: 20px;
   overflow: hidden;
-  height: calc(100% - 10px);
-  width: calc(100% - 10px);
+  height: 100%;
+  width: 100%;
   background-color: black;
   box-shadow: -3px -3px 10px var(--black);
   z-index: 6;
 }
-.service .service-title-container .service-title .service-title-image img {
+.service-title-container .service-title .service-title-image img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0.8;
 }
-.service .service-title-container .service-title p {
+.service-title-container .service-title p {
   font-size: 30px;
   font-weight: bold;
   color: var(--Ivory_White);
   position: relative;
   z-index: 7;
 }
-.service .service-info {
+
+.service-info {
   position: relative;
   width: 90%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 150px;
+  margin-top: auto;
   margin-left: auto;
   border-radius: 20px;
   overflow: hidden;
@@ -247,7 +267,7 @@ header #scroll-buttons {
   box-shadow: 8px 4px 10px var(--black);
   z-index: 1;
 }
-.service .service-info img {
+.service-info img {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -256,24 +276,23 @@ header #scroll-buttons {
   opacity: 0.3;
   z-index: 2;
 }
-.service .service-info .service-info-text {
+.service-info .service-info-text {
   position: relative;
   z-index: 3;
   height: 100%;
   width: 100%;
   padding: 0 10px;
-  padding-top: 90px;
   color: var(--Ivory_White);
 }
-.service .service-info .service-info-text h3 {
+.service-info .service-info-text h3 {
   font-size: 25px;
   text-align: center;
 }
-.service .service-info .service-info-text p {
-  font-size: 15px;
+.service-info .service-info-text p {
+  font-size: 16px;
 }
-.service .service-info .service-info-button {
-  height: 80px;
+.service-info .service-info-button {
+  height: 60px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -281,9 +300,9 @@ header #scroll-buttons {
   margin-bottom: 20px;
   z-index: 3;
   cursor: pointer;
-  background-color: var(--beige-bg);
+  background-color: var(--Ivory_White);
 }
-.service .service-info .service-info-button p {
+.service-info .service-info-button p {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
@@ -291,10 +310,63 @@ header #scroll-buttons {
   color: var(--black);
   margin: 0;
 }
-.service .service-info .service-info-button:hover p {
+.service-info .service-info-button:hover p {
   font-size: 20px;
 }
 
+.mr-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  #services {
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .services-title {
+    height: 180px;
+    width: 100%;
+    margin: 30px 0 !important;
+  }
+  .service-title-container {
+    left: auto !important;
+    right: auto !important;
+  }
+  .service-info {
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .mb-100_mb {
+    margin-bottom: 100px;
+  }
+  .services-part {
+    width: 100%;
+  }
+}
 @keyframes visible {
   from {
     opacity: 0;
