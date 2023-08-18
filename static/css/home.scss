@@ -16,6 +16,11 @@
 
     // sizes
     --padding-glob: 40px;
+
+    // fonts
+    --Montserrat-Light : Montserrat-Light;
+    --PlayfairDisplay-Medium : PlayfairDisplay-Medium;
+    --CormorantGaramond-Medium : CormorantGaramond-Medium;
 }
 
 /* Fonts */
@@ -221,6 +226,10 @@ header {
 
     padding: 120px 20px;
     // background-color: red;
+
+    background-image: url(/static/img/bg-feuilles.png);
+    background-size: contain;
+    background-repeat:round;
 }
 
 .services-part {
@@ -241,7 +250,7 @@ header {
 
     height: 55%;
     width: 100%;
-    background-color: var(--beige-bg);
+    background-color: var(--grey_border);
 }
 
 
@@ -321,7 +330,7 @@ header {
             width: 100%;
 
             background-color: black;
-            box-shadow: -3px -3px 10px var(--black);
+            box-shadow: 4px 2px 10px var(--grey);
 
 
             z-index: 6;
@@ -362,8 +371,8 @@ header {
     border-radius: 20px;
     overflow: hidden;
 
-    background-color: black;
-    box-shadow: 8px 4px 10px var(--black);
+    background-color: #ffffff;
+    box-shadow: 4px 2px 10px var(--grey);
 
     z-index: 1;
 
@@ -374,7 +383,7 @@ header {
 
         object-fit: cover;
 
-        opacity: 0.3;
+        opacity: 0.2;
 
         z-index: 2;
     }
@@ -392,15 +401,18 @@ header {
 
         // background-color: green;
 
-        color: var(--Ivory_White);
+        color: var(--black);
         
         h3 {
             font-size: 25px;
             text-align: center;
+            font-weight: bold;
+            font-family: CormorantGaramond-Medium;
         }
 
         p {
             font-size: 16px;
+            font-weight: 700;
         }
     }
 
@@ -418,7 +430,7 @@ header {
 
         cursor: pointer;
 
-        background-color: var(--Ivory_White);
+        background-color: var(--beige-bg);
 
         p {
             text-align: center;
@@ -500,6 +512,156 @@ header {
     }
 }
 
+
+
+
+// ----------------------- TESTIMONIALS -----------------------------
+#testimonials-big-container {
+    width: 100%;
+
+    padding: 120px 20px;
+
+    background-color: var(--beige-bg);
+}
+
+#testimonials-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#testimonials-title {
+    width: 100%;
+    h1 {
+        width: 100%;
+        margin: 0;
+
+        font-size: 40px;
+        text-align: center;
+
+        font-family: var(--CormorantGaramond-Medium);
+        color: var(--black);
+    }
+}
+
+#testimonials {
+    position: relative;
+    height: 480px;
+}
+
+#testimonials-total {
+    width: 300%;
+    height: 480px;
+
+    position: absolute;
+    
+    display: flex;
+    align-items: center;
+}
+
+.testimonial {
+    opacity: 0;
+
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    // background-color: var(--Ivory_White);
+}
+
+.testimonial-content {
+    q {
+        font-size: 20px;
+        font-family: var(--Montserrat-Light);
+        font-weight: bold;
+        font-style: italic;
+
+        letter-spacing: 1px;
+        line-height: 35px;
+
+        color: var(--grey)
+    }
+}
+
+.testimonial-name {
+    width: 100%;
+    padding-top: 50px;
+
+    i {
+        display: block;
+        width: 100%;
+        text-align: end;
+
+        font-size: 18px;
+        font-style: italic;
+        color: var(--grey)
+    }
+}
+
+#testimonials-buttons {
+    height: 30px;
+    width: 150px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        height: 100%;
+    }
+    p {
+        font-size: 50px;
+        font-weight: bold;
+        color: var(--black);
+
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 700px) {
+    #testimonials {
+        height: 600px;
+    }
+    #testimonials-total {
+        height: 600px;
+    }
+    .testimonial-content q {
+        font-size: 19px;
+    }
+    .testimonial-name i {
+        font-size: 17px;
+    }
+}
+@media (max-width: 550px) {
+    #testimonials {
+        height: 750px;
+    }
+    #testimonials-total {
+        height: 750px;
+    }
+    .testimonial-content q {
+        font-size: 18px;
+    }
+    .testimonial-name i {
+        font-size: 16px;
+    }
+}
+@media (max-width: 450px) {
+    #testimonials {
+        height: 800px;
+    }
+    #testimonials-total {
+        height: 800px;
+    }
+    .testimonial-content q {
+        font-size: 14px;
+    }
+    .testimonial-name i {
+        font-size: 12px;
+    }
+}
 
 // animation
 @keyframes visible {

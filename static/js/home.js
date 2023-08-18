@@ -1,136 +1,179 @@
 // global vars
-let slide = 1;
-let add = 1; //for interval
-let timing = 0; //for interval
 
-function carousel_bg(bg_home)
+let hero = {
+    object : null,
+    slide : 1,
+    slides_num : 3,
+    add : 1,
+    timing : 0,
+};
+let testimonial = {
+    object : null,
+    slide : 1,
+    slides_num : 3,
+    add : 1,
+    timing : 0,
+};
+
+
+function carousel_bg(container)
 {
-    let width = document.querySelector('#bg-home').clientWidth / 3;
-    if (slide == 1)
-    {
-        bg_home.setAttribute('style', 'left: 0;');
-    }
-    else if (slide == 2)
-    {
-        bg_home.setAttribute('style', 'left: -' + width.toString() + 'px;');
-    }
-    else if (slide == 3)
-    {
-        bg_home.setAttribute('style', 'left: -' + (width * 2).toString() + 'px;');
-    }
+    let width = container.object.clientWidth / container.slides_num;
+    container.object.setAttribute('style', 'left: -' + (width * (container.slide - 1)).toString() + 'px;');
 }
 
-function carousel_title(titles)
+function carousel_title(object)
 {
-    // reset titles
-    titles.forEach(title => {
+    // reset hero.titles
+    object.titles.forEach(title => {
         title.removeAttribute('style');
     });
 
     // show title
-    let title = titles[slide - 1];
-    title.setAttribute('style', "display: block; animation: visible 2s; opacity: 1");
+    let title = object.titles[object.slide - 1];
+    title.setAttribute('style', "display: block !important; animation: visible 1.5s; opacity: 1");
 }
 
 
-function carousel_buttons(buttons)
+function carousel_buttons(object)
 {
     // reset
-    buttons.forEach(button => {
+    object.buttons.forEach(button => {
         button.removeAttribute('style');
     });
 
     // show button
-    let button = buttons[slide - 1];
+    let button = object.buttons[object.slide - 1];
     button.setAttribute('style', 'background-color: var(--Ivory_White);');
 }
 
 // start
 document.addEventListener('DOMContentLoaded', function() {
-    // carousel
-    let bg_home = document.getElementById('bg-home');
-    let titles = document.querySelectorAll('.title');
-    let buttons = document.querySelectorAll('.scroll-button');
+    // carousel hero
+    hero.object = document.getElementById('bg-home');
+    hero.titles = document.querySelectorAll('.title');
+    hero.buttons = document.querySelectorAll('.scroll-button');
+
+    // carousel testimonial
+    testimonial.object = document.getElementById('testimonials-total');
+    testimonial.titles = document.querySelectorAll('.testimonial');
+
     
+
+    
+
     // window
     window.addEventListener('resize', () => {
-        carousel_bg(bg_home);
-        carousel_title(titles);
-        carousel_buttons(buttons);
+        carousel_bg(hero);
+        carousel_bg(testimonial);
     });
 
-    // go back
+    // go back hero
     document.getElementById('precedent').addEventListener('click', function() {
-        if (slide != 1)
+        if (hero.slide != 1)
         {
             // reset timing
-            timing = 0;
+            hero.timing = 0;
 
             // slide
-            slide--;
-            carousel_bg(bg_home);
-            carousel_title(titles);
-            carousel_buttons(buttons);
+            hero.slide--;
+            carousel_bg(hero);
+            carousel_title(hero);
+            carousel_buttons(hero);
         }
     })
     
-    // go forth
+    // go forth hero
     document.getElementById('suivant').addEventListener('click', function() {
-        if (slide != 3)
+        if (hero.slide != 3)
         {
             // reset timing
-            timing = 0;
+            hero.timing = 0;
 
             // slide
-            slide++;
-            carousel_bg(bg_home);
-            carousel_title(titles);
-            carousel_buttons(buttons);
+            hero.slide++;
+            carousel_bg(hero);
+            carousel_title(hero);
+            carousel_buttons(hero);
         }
     })
 
-    // buttons
-    buttons.forEach(button => {
+    // hero.buttons
+    hero.buttons.forEach(button => {
         button.addEventListener('click', () => {
-            slide = parseInt(button.id);
+            hero.slide = parseInt(button.id);
 
-            add = 1;
+            hero.add = 1;
 
-            carousel_bg(bg_home);
-            carousel_title(titles);
-            carousel_buttons(buttons);
+            carousel_bg(hero);
+            carousel_title(hero);
+            carousel_buttons(hero);
 
-            timing = 0;
+            hero.timing = 0;
         });
     });
+    
+
+
+
+    // go back testimonial
+    document.getElementById('test-but-pre').addEventListener('click', function() {
+        if (testimonial.slide != 1)
+        {
+            // reset timing
+            testimonial.timing = 0;
+
+            // slide
+            testimonial.slide--;
+            carousel_bg(testimonial);
+            carousel_title(testimonial);
+        }
+    })
+    
+    // go forth testimonial
+    document.getElementById('test-but-suiv').addEventListener('click', function() {
+        if (testimonial.slide != 3)
+        {
+            // reset timing
+            testimonial.timing = 0;
+
+            // slide
+            testimonial.slide++;
+            carousel_bg(testimonial);
+            carousel_title(testimonial);
+        }
+    })
+
+
+
 
     // autoscroll
     setInterval(function() {
         // add to timing
-        timing++;
+        hero.timing++;
 
-        // return if not reach 3s
-        if (timing < 4)
+        // return if not reach n seconds
+        if (hero.timing < (hero.slides_num + 1))
         {
             return;
         }
 
         // else
-        if (slide == 1)
+        if (hero.slide == 1)
         {
-            add = 1;
+            hero.add = 1;
         }
-        else if (slide == 3)
+        else if (hero.slide == hero.slides_num)
         {
-            add = -1;
+            hero.add = -1;
         }
-        slide += add;
+        hero.slide += hero.add;
 
-        carousel_bg(bg_home);
-        carousel_title(titles);
-        carousel_buttons(buttons);
+        carousel_bg(hero);
+        carousel_title(hero);
+        carousel_buttons(hero);
 
-        timing = 0;
+        hero.timing = 0;
 
     }, 1000);
 })
