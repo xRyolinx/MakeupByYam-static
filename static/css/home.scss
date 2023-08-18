@@ -620,6 +620,13 @@ header {
     }
 }
 
+@media (max-width: 900px) {
+    #testimonials-big-container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
 @media (max-width: 700px) {
     #testimonials {
         height: 600px;
@@ -648,7 +655,7 @@ header {
         font-size: 16px;
     }
 }
-@media (max-width: 450px) {
+@media (max-width: 410px) {
     #testimonials {
         height: 800px;
     }
