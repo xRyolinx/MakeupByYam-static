@@ -144,6 +144,11 @@ header #header-text p {
   line-height: 25px;
 }
 
+.categorie {
+  background-color: transparent !important;
+  cursor: auto !important;
+}
+
 .drop-down {
   width: 100%;
   margin: 50px auto;
